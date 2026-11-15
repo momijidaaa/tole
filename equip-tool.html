@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    <link rel="stylesheet" href="equip-tool.css">
+  </head>
+  <body>
+    <h1>なんかたのまれてたやつ</h1>
+    <p class="n">
+      入力内容はこのブラウザに自動保存されます。サンプルは「全消去」で消せます。
+    </p>
+
+    <div class="tabs">
+      <button data-a="tab" data-v="items">装備一覧</button
+      ><button data-a="tab" data-v="series">シリーズ</button
+      ><button data-a="tab" data-v="parts">装備の種類</button
+      ><button data-a="tab" data-v="io">取り込み・出力</button>
+    </div>
+    <div class="tab" id="t-series">
+      <h2>シリーズ（共通素材・ランク・LV）</h2>
+      <p class="n">
+        素材は1行1個（例:
+        ネザークォーツ1）。LVは各装備で個別に上書きもできます。
+      </p>
+      <div class="w"><table id="ts"></table></div>
+      <div class="bar"><button data-a="addS">＋ シリーズ追加</button></div>
+
+      <h2>全装備共通素材</h2>
+      <textarea id="gm"></textarea>
+    </div>
+    <div class="tab" id="t-parts">
+      <h2>装備の種類と共通素材</h2>
+      <p class="n">
+        「丸盾」「短弓」など装備名に付く名前を登録し、9種類のどれかに分類。同じ名前なら共通になる素材を入れます。
+      </p>
+      <div class="w"><table id="tp"></table></div>
+      <div class="bar"><button data-a="addP">＋ 装備の種類追加</button></div>
+    </div>
+    <div class="tab" id="t-items">
+      <h2>装備一覧（モンスター素材など個別素材を入力）</h2>
+      <p class="n">
+        個別素材の欄に入力して Enter
+        で次の行へ。複数ある素材は「-」でつなげます（例:
+        洞窟ゴブリンの折れ短剣-影の残滓2）。
+      </p>
+      <div class="bar">
+        <select id="selS"></select
+        ><select id="selP"></select
+        ><button data-a="addI">＋ 1件追加</button>
+        <button data-a="fillS">このシリーズに全ての種類を一括追加</button>
+      </div>
+      <div class="bar">
+        <input id="sq" placeholder="装備名で検索" /><select id="flt"></select
+        ><select id="fpf"></select
+        ><label><input type="checkbox" id="ck" /> 素材未入力のみ</label
+        ><span id="cnt" class="n"></span>
+      </div>
+      <div class="w"><table id="ti"></table></div>
+    </div>
+    <div class="tab" id="t-io">
+      <h2>取り込み・出力</h2>
+      <p class="n">
+        既存のメモ（「・白砂の丸盾 / -素材… / lv
+        5」形式）を貼り付けて取り込めます。取り込み後は「共通素材を自動抽出」でシリーズ・種類の共通素材に振り分けます。
+      </p>
+      <textarea
+        id="imp"
+        placeholder="・白砂の丸盾&#10;-E級魔法石1&#10;-青銅インゴット4&#10;lv 5"
+      ></textarea>
+      <div class="bar">
+        <button data-a="imp">取り込む</button
+        ><button data-a="ext">共通素材を自動抽出</button>
+        <button class="p" data-a="out">出力を更新</button
+        ><button data-a="copyM">元メモ形式でコピー</button
+        ><button data-a="copyT">複数行テキストでコピー</button
+        ><button data-a="copyC">CSVをコピー</button>
+        <button data-a="clr">全消去</button>
+      </div>
+      <textarea id="out" style="min-height: 160px" readonly></textarea>
+    </div>
+    <script src="equip-tool.js" defer></script>
+  </body>
+</html>

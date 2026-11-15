@@ -1,0 +1,152 @@
+:root {
+        --bg: #fff;
+        --fg: #1d1d1f;
+        --mu: #6b6b70;
+        --bd: #d8d8de;
+        --ac: #3b6fd4;
+        --cd: #f5f5f7;
+        color-scheme: light;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #17181b;
+          --fg: #e8e8ea;
+          --mu: #9a9aa2;
+          --bd: #34363c;
+          --ac: #7aa2f7;
+          --cd: #202228;
+          color-scheme: dark;
+        }
+      }
+      :root[data-theme="dark"] {
+        --bg: #17181b;
+        --fg: #e8e8ea;
+        --mu: #9a9aa2;
+        --bd: #34363c;
+        --ac: #7aa2f7;
+        --cd: #202228;
+        color-scheme: dark;
+      }
+      html {
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font:
+          14px/1.5 system-ui,
+          "Hiragino Sans",
+          "Noto Sans JP",
+          sans-serif;
+        padding: 14px;
+        max-width: 1100px;
+        margin: auto;
+      }
+      h1 {
+        font-size: 18px;
+        margin: 0 0 4px;
+      }
+      h2 {
+        font-size: 15px;
+        margin: 22px 0 6px;
+      }
+      p.n {
+        color: var(--mu);
+        margin: 2px 0 8px;
+        font-size: 12px;
+      }
+      .w {
+        overflow-x: auto;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        min-width: 640px;
+      }
+      th,
+      td {
+        border: 1px solid var(--bd);
+        padding: 4px 6px;
+        vertical-align: top;
+        text-align: left;
+      }
+      th {
+        background: var(--cd);
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      input,
+      select,
+      textarea,
+      button {
+        font: inherit;
+        color: var(--fg);
+        background: var(--bg);
+        border: 1px solid var(--bd);
+        border-radius: 6px;
+        padding: 4px 6px;
+        max-width: 100%;
+      }
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        min-height: 56px;
+      }
+      input.s {
+        width: 64px;
+      }
+      input.m {
+        width: 130px;
+      }
+      button {
+        cursor: pointer;
+        background: var(--cd);
+      }
+      button.p {
+        background: var(--ac);
+        color: #fff;
+        border-color: var(--ac);
+      }
+      .bar {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 6px 0;
+      }
+      .mats {
+        white-space: pre-line;
+        font-size: 12px;
+        color: var(--mu);
+      }
+      .tabs {
+        display: flex;
+        gap: 6px;
+        margin: 10px 0;
+      }
+      .tabs button.on {
+        background: var(--ac);
+        color: #fff;
+        border-color: var(--ac);
+      }
+      .tab {
+        display: none;
+      }
+      .tab.on {
+        display: block;
+      }
+      input.w1 {
+        width: 100%;
+        min-width: 220px;
+        box-sizing: border-box;
+      }
+      tr.em td {
+        background: var(--cd);
+      }
+      tr.em td:first-child {
+        border-left: 3px solid var(--ac);
+      }
